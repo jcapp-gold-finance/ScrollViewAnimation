@@ -1,6 +1,6 @@
 //
 //  TownAnimationView.h
-//  Ease
+//  JCScrollAnimation
 //
 //  Created by 戴奕 on 2017/2/24.
 //  Copyright © 2017年 戴奕. All rights reserved.
@@ -12,7 +12,6 @@
 @protocol TownAnimationViewDelegate <NSObject>
 
 @optional
-
 /**
  改变当前显示图片
  @param townAnimationView 当前自身view
@@ -43,7 +42,9 @@
  是否在拖拽中
  */
 @property (nonatomic, assign, getter=isDrag, readonly) BOOL drag;
-
+/**
+ 当前页
+ */
 @property (nonatomic, assign, readonly) NSInteger currentPage;
 
 @end

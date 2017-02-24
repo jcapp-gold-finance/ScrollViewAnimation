@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF23922A1E5EE45A0027C499"
-               BuildableName = "TestScrollView.app"
-               BlueprintName = "TestScrollView"
-               ReferencedContainer = "container:TestScrollView.xcodeproj">
+               BlueprintIdentifier = "AF2392671E602FAD0027C499"
+               BuildableName = "JCScrollAnimation.app"
+               BlueprintName = "JCScrollAnimation"
+               ReferencedContainer = "container:JCScrollAnimation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF23922A1E5EE45A0027C499"
-            BuildableName = "TestScrollView.app"
-            BlueprintName = "TestScrollView"
-            ReferencedContainer = "container:TestScrollView.xcodeproj">
+            BlueprintIdentifier = "AF2392671E602FAD0027C499"
+            BuildableName = "JCScrollAnimation.app"
+            BlueprintName = "JCScrollAnimation"
+            ReferencedContainer = "container:JCScrollAnimation.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF23922A1E5EE45A0027C499"
-            BuildableName = "TestScrollView.app"
-            BlueprintName = "TestScrollView"
-            ReferencedContainer = "container:TestScrollView.xcodeproj">
+            BlueprintIdentifier = "AF2392671E602FAD0027C499"
+            BuildableName = "JCScrollAnimation.app"
+            BlueprintName = "JCScrollAnimation"
+            ReferencedContainer = "container:JCScrollAnimation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AF23922A1E5EE45A0027C499"
-            BuildableName = "TestScrollView.app"
-            BlueprintName = "TestScrollView"
-            ReferencedContainer = "container:TestScrollView.xcodeproj">
+            BlueprintIdentifier = "AF2392671E602FAD0027C499"
+            BuildableName = "JCScrollAnimation.app"
+            BlueprintName = "JCScrollAnimation"
+            ReferencedContainer = "container:JCScrollAnimation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

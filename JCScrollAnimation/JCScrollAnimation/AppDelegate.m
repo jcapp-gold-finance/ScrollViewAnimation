@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  TestScrollView
+//  JCScrollAnimation
 //
-//  Created by 戴奕 on 2017/2/23.
+//  Created by 戴奕 on 2017/2/24.
 //  Copyright © 2017年 戴奕. All rights reserved.
 //
 

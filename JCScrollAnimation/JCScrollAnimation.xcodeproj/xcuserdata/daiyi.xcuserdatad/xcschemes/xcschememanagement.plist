@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TestScrollView.xcscheme</key>
+		<key>JCScrollAnimation.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>AF23922A1E5EE45A0027C499</key>
+		<key>AF2392671E602FAD0027C499</key>
 		<dict>
 			<key>primary</key>
 			<true/>

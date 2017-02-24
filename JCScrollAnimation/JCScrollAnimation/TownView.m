@@ -1,6 +1,6 @@
 //
 //  TownView.m
-//  Ease
+//  JCScrollAnimation
 //
 //  Created by 戴奕 on 2017/2/23.
 //  Copyright © 2017年 戴奕. All rights reserved.
@@ -12,8 +12,8 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kImageHeight 1.3*kScreenWidth
 
-static NSArray *imageArr = nil;
 static NSArray *imageArrUp = nil;
+static NSArray *imageArr = nil;
 static NSArray *imageArrDown = nil;
 
 @interface TownView ()
@@ -38,6 +38,7 @@ static NSArray *imageArrDown = nil;
 
 + (void)initialize {
     if (self == TownView.class) {
+        // TODO: 后续将图片设置的接口开放到TownAnimationView中，提供给外界设置图片的方法
         imageArrUp = @[[UIImage imageNamed:@"Town_1_1"], [UIImage imageNamed:@"Town_2_1"], [UIImage imageNamed:@"Town_3_1"], [UIImage imageNamed:@"Town_4_1"], [UIImage imageNamed:@"Town_5_1"], [UIImage imageNamed:@"Town_6_1"]];
         imageArr = @[[UIImage imageNamed:@"Town_1_2"], [UIImage imageNamed:@"Town_2_2"], [UIImage imageNamed:@"Town_3_2"], [UIImage imageNamed:@"Town_4_2"], [UIImage imageNamed:@"Town_5_2"], [UIImage imageNamed:@"Town_6_2"]];
         imageArrDown = @[[UIImage imageNamed:@"Town_1_3"], [UIImage imageNamed:@"Town_2_3"], [UIImage imageNamed:@"Town_3_3"], [UIImage imageNamed:@"Town_4_3"], [UIImage imageNamed:@"Town_5_3"], [UIImage imageNamed:@"Town_6_3"]];
@@ -66,19 +67,6 @@ static NSArray *imageArrDown = nil;
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     imageView.userInteractionEnabled = YES;
     return imageView;
-}
-
-// 根据下标一次性设置图片
-- (void)setImage:(NSInteger)index {
-    self.imgvCenter.image = imageArr[index];
-    self.imgvUp.image = imageArrUp[index];
-    self.imgvDown.image = imageArrDown[index];
-}
-
-- (void)setImageViewFrame:(CGRect)frame {
-    [self.imageViewArr enumerateObjectsUsingBlock:^(UIImageView *imageView, NSUInteger idx, BOOL * _Nonnull stop) {
-        imageView.frame = frame;
-    }];
 }
 
 - (void)updateUIByPercent:(CGFloat)percent {
@@ -110,6 +98,7 @@ static NSArray *imageArrDown = nil;
         }
     }
     
+    // TODO: 利用数组<CGRect>简化frame设置
     if (percent > 0) {     // 代表往上拉
         switch (self.type) {
             case TownViewTypeUpup:
@@ -240,7 +229,7 @@ static NSArray *imageArrDown = nil;
     }
 }
 
-- (void)changeType:(TownScrollType)type {
+- (void)resetType:(TownScrollType)type {
     // 图片变更
     NSInteger index = [imageArr indexOfObject:self.imgvCenter.image];
     
@@ -269,6 +258,20 @@ static NSArray *imageArrDown = nil;
     [self setType:self.type];
 }
 
+
+// 根据下标一次性设置图片
+- (void)setImage:(NSInteger)index {
+    self.imgvCenter.image = imageArr[index];
+    self.imgvUp.image = imageArrUp[index];
+    self.imgvDown.image = imageArrDown[index];
+}
+
+- (void)setImageViewFrame:(CGRect)frame {
+    [self.imageViewArr enumerateObjectsUsingBlock:^(UIImageView *imageView, NSUInteger idx, BOOL * _Nonnull stop) {
+        imageView.frame = frame;
+    }];
+}
+
 - (void)setAlphaWithType:(TownViewType)type {
     [self.imageViewArr enumerateObjectsUsingBlock:^(UIImageView *imageView, NSUInteger idx, BOOL * _Nonnull stop) {
         imageView.alpha = (idx == (type - 1));
@@ -277,9 +280,9 @@ static NSArray *imageArrDown = nil;
 
 - (void)setType:(TownViewType)type {
     _type = type;
-    
+    // 改变透明度
     [self setAlphaWithType:type];
-    
+    // 改变frame
     switch (type) {
         case TownViewTypeUpup:
         {

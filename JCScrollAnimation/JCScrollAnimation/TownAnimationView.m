@@ -1,6 +1,6 @@
 //
 //  TownAnimationView.m
-//  Ease
+//  JCScrollAnimation
 //
 //  Created by 戴奕 on 2017/2/24.
 //  Copyright © 2017年 戴奕. All rights reserved.
@@ -60,10 +60,10 @@
         NSLog(@"向上拉，向下越界");
         scrollView.contentOffset = CGPointMake(0, kScreenHeight);
         
-        [self.vUp changeType:TownScrollTypeUp];
-        [self.vCenter changeType:TownScrollTypeUp];
-        [self.vDown changeType:TownScrollTypeUp];
-        [self.vChange changeType:TownScrollTypeUp];
+        [self.vUp resetType:TownScrollTypeUp];
+        [self.vCenter resetType:TownScrollTypeUp];
+        [self.vDown resetType:TownScrollTypeUp];
+        [self.vChange resetType:TownScrollTypeUp];
         
         if (self.currentPage == 6) {
             self.currentPage = 1;
@@ -77,10 +77,10 @@
         NSLog(@"向下拉，向上越界");
         scrollView.contentOffset = CGPointMake(0, kScreenHeight);
         
-        [self.vUp changeType:TownScrollTypeDown];
-        [self.vCenter changeType:TownScrollTypeDown];
-        [self.vDown changeType:TownScrollTypeDown];
-        [self.vChange changeType:TownScrollTypeDown];
+        [self.vUp resetType:TownScrollTypeDown];
+        [self.vCenter resetType:TownScrollTypeDown];
+        [self.vDown resetType:TownScrollTypeDown];
+        [self.vChange resetType:TownScrollTypeDown];
         
         if (self.currentPage == 1) {
             self.currentPage = 6;

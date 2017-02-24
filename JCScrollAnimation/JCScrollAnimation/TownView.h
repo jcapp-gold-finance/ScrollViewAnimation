@@ -1,6 +1,6 @@
 //
 //  TownView.h
-//  Ease
+//  JCScrollAnimation
 //
 //  Created by 戴奕 on 2017/2/23.
 //  Copyright © 2017年 戴奕. All rights reserved.
@@ -18,8 +18,8 @@ typedef NS_ENUM(NSInteger, TownViewType) {
 };
 
 typedef NS_ENUM(NSInteger, TownScrollType) {
-    TownScrollTypeUp,
-    TownScrollTypeDown
+    TownScrollTypeUp,       // 往上滚
+    TownScrollTypeDown      // 往下滚
 };
 
 @protocol TownViewDelegate <NSObject>
@@ -33,10 +33,29 @@ typedef NS_ENUM(NSInteger, TownScrollType) {
 
 @property (nonatomic, weak) id<TownViewDelegate> delegate;
 
+/**
+ 当前view类型
+ */
 @property (nonatomic, assign) TownViewType type;
 
-- (void)changeType:(TownScrollType)type;
+/**
+ 根据滚动方向“复位”
+ @param type 滚动类型
+ @discussion 该方法内部会调节图片相关UI
+ */
+- (void)resetType:(TownScrollType)type;
+
+/**
+ 根据当前滚动百分比更新UI
+ @param percent 滚动一个屏幕的百分比
+ @discussion 该方法内部会调节图片相关UI
+ */
 - (void)updateUIByPercent:(CGFloat)percent;
+
+/**
+ 根据下标设置图片
+ @param index 下标
+ */
 - (void)setImage:(NSInteger)index;
 
 @end
